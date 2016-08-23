@@ -39,7 +39,7 @@ class Anva_Loan_Calculator
 		$this->form( $email, $report );
 	}
 
-	public function form( $email, $print )
+	public function form( $email = true, $report = true )
 	{
 		?>
 		<div id="loan" class="loan">

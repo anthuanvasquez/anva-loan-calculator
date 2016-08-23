@@ -7,6 +7,10 @@
 	padding: $padding;
 	position: relative;
 
+	.widget & {
+		padding: 10px;
+	}
+
 	&__heading {
 		background-color: #F8F8F8;
 		border-bottom: 1px solid #DDD;
@@ -14,6 +18,14 @@
 		font-weight: 400;
 		margin: (-$padding) (-$padding) $padding;
 		padding: $padding;
+
+		.widget & {
+			font-size: 18px;
+			line-height: 1.2;
+			text-align: center;
+			margin: (-10px) (-10px) 10px;
+			padding: 10px;
+		}
 	}
 
 	&__form {
@@ -41,6 +53,11 @@
 			margin: $padding (-$padding) 0;
 			padding: $padding;
 			text-align: center;
+
+			.widget & {
+				margin: (-10px) (-10px) 10px;
+				padding: 10px;
+			}
 		}
 	}
 
@@ -94,6 +111,11 @@
 	    &--mini {
 	    	display: inline-block;
 	    	width: 125px;
+
+	    	.widget & {
+	    		display: block;
+	    		width: 100%;
+	    	}
 	    }
 	}
 
@@ -104,6 +126,12 @@
 
 		&:last-child {
 			margin-right: 0;
+		}
+
+		.widget & {
+			float: none;
+			margin-right: 0;
+			width: 100%;
 		}
 	}
 
@@ -137,6 +165,14 @@
 		&.active {
 			visibility: visible;
 			opacity: 1;
+		}
+	}
+
+	&__button {
+		.widget & {
+			margin-left: 0;
+			margin-right: 0;
+			width: 100%;
 		}
 	}
 

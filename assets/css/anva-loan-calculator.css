@@ -6,6 +6,10 @@
   position: relative;
 }
 
+.widget .loan {
+  padding: 10px;
+}
+
 .loan__heading {
   background-color: #F8F8F8;
   border-bottom: 1px solid #DDD;
@@ -13,6 +17,14 @@
   font-weight: 400;
   margin: -20px -20px 20px;
   padding: 20px;
+}
+
+.widget .loan__heading {
+  font-size: 18px;
+  line-height: 1.2;
+  text-align: center;
+  margin: -10px -10px 10px;
+  padding: 10px;
 }
 
 .loan__form {
@@ -49,6 +61,11 @@
   margin: 20px -20px 0;
   padding: 20px;
   text-align: center;
+}
+
+.widget .loan__item--actions {
+  margin: -10px -10px 10px;
+  padding: 10px;
 }
 
 .loan__label {
@@ -111,6 +128,11 @@
   width: 125px;
 }
 
+.widget .loan__field--mini {
+  display: block;
+  width: 100%;
+}
+
 .loan__grid {
   float: left;
   margin-right: 2%;
@@ -119,6 +141,12 @@
 
 .loan__grid:last-child {
   margin-right: 0;
+}
+
+.widget .loan__grid {
+  float: none;
+  margin-right: 0;
+  width: 100%;
 }
 
 .loan__messages {
@@ -154,6 +182,12 @@
 .loan__overlay.active {
   visibility: visible;
   opacity: 1;
+}
+
+.widget .loan__button {
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
 }
 
 /*# sourceMappingURL=anva-loan-calculator.css.map */
