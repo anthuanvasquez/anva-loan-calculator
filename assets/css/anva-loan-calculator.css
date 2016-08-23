@@ -1,0 +1,159 @@
+.loan {
+  border: 1px solid #DDD;
+  -webkit-border-radius: 2px;
+          border-radius: 2px;
+  padding: 20px;
+  position: relative;
+}
+
+.loan__heading {
+  background-color: #F8F8F8;
+  border-bottom: 1px solid #DDD;
+  font-size: 24px;
+  font-weight: 400;
+  margin: -20px -20px 20px;
+  padding: 20px;
+}
+
+.loan__form {
+  margin-bottom: 0;
+  margin-bottom: -20px;
+}
+
+.loan__list {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+.loan__item {
+  margin-bottom: 15px;
+}
+
+.loan__item:before, .loan__item:after {
+  content: " ";
+  display: table;
+}
+
+.loan__item:after {
+  clear: both;
+}
+
+.loan__item:last-child {
+  margin-bottom: 0;
+}
+
+.loan__item--actions {
+  background-color: #F5F5F5;
+  border-top: 1px solid #DDD;
+  margin: 20px -20px 0;
+  padding: 20px;
+  text-align: center;
+}
+
+.loan__label {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 0;
+  max-width: 100%;
+}
+
+.loan__field {
+  background-color: #FFF;
+  background-image: none;
+  border: 1px solid #CCC;
+  -webkit-border-radius: 0;
+          border-radius: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  color: #555;
+  display: block;
+  font-size: 14px;
+  height: 34px;
+  line-height: 1.42857;
+  margin-bottom: 5px;
+  padding: 6px 12px;
+  -webkit-transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+  width: 100%;
+}
+
+.loan__field:last-of-type {
+  margin-bottom: 0;
+}
+
+.loan__field--select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: 0;
+  outline: 1px solid #CCC;
+}
+
+.loan__field--checkbox {
+  border: 0;
+  display: inline;
+  height: auto;
+  line-height: normal;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  top: 3px;
+  width: auto;
+}
+
+.loan__field--mini {
+  display: inline-block;
+  width: 125px;
+}
+
+.loan__grid {
+  float: left;
+  margin-right: 2%;
+  width: 48%;
+}
+
+.loan__grid:last-child {
+  margin-right: 0;
+}
+
+.loan__messages {
+  background-color: #06c4ff;
+  -webkit-border-radius: 4px;
+          border-radius: 4px;
+  margin-bottom: 30px;
+  color: #FFF;
+  padding: 10px;
+}
+
+.loan__messages:empty {
+  display: none;
+}
+
+.loan__overlay {
+  background-color: rgba(255, 255, 255, 0.8);
+  background-image: url("../images/ajax-loader.gif");
+  background-position: center center;
+  background-repeat: no-repeat;
+  left: 0;
+  height: 100%;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  -webkit-transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease;
+  visibility: hidden;
+  width: 100%;
+  z-index: 10;
+}
+
+.loan__overlay.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+/*# sourceMappingURL=anva-loan-calculator.css.map */
