@@ -37,6 +37,41 @@
   padding: 10px;
 }
 
+.loan__table {
+  margin-bottom: 20px;
+  max-width: 100%;
+  width: 100%;
+}
+
+.loan__table > thead > tr > th,
+.loan__table > thead > tr > td,
+.loan__table > tbody > tr > th,
+.loan__table > tbody > tr > td,
+.loan__table > tfoot > tr > th,
+.loan__table > tfoot > tr > td {
+  border-top: 1px solid #DDD;
+  line-height: 1.42857;
+  padding: 8px;
+  vertical-align: top;
+}
+
+.loan__table--bordered {
+  border: 1px solid #DDD;
+}
+
+.loan__table--bordered > thead > tr > th,
+.loan__table--bordered > thead > tr > td,
+.loan__table--bordered > tbody > tr > th,
+.loan__table--bordered > tbody > tr > td,
+.loan__table--bordered > tfoot > tr > th,
+.loan__table--bordered > tfoot > tr > td {
+  border: 1px solid #DDD;
+}
+
+.loan__table--striped > tbody > tr:nth-of-type(odd) {
+  background-color: #F9F9F9;
+}
+
 .loan__table--history {
   border: 1px solid #DDD;
   border-top: 0;
@@ -92,6 +127,12 @@
   max-width: 100%;
 }
 
+@media screen and (max-width: 768px) {
+  .loan__label {
+    margin-bottom: 5px;
+  }
+}
+
 .loan__field {
   background-color: #FFF;
   background-image: none;
@@ -122,8 +163,6 @@
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  border: 0;
-  outline: 1px solid #CCC;
 }
 
 .loan__field--checkbox {
@@ -139,19 +178,33 @@
 }
 
 .loan__field--mini {
-  display: inline-block;
-  width: 125px;
+  float: left;
+  width: 33%;
 }
 
 .widget .loan__field--mini {
   display: block;
+  float: none;
   width: 100%;
 }
 
 .loan__grid {
   float: left;
-  margin-right: 2%;
+  margin-right: 4%;
   width: 48%;
+}
+
+@media screen and (max-width: 768px) {
+  .loan__item .loan__grid {
+    float: none;
+    margin-right: 0;
+    width: 100%;
+  }
+}
+
+.loan__grid--third {
+  margin-right: 2%;
+  width: 32%;
 }
 
 .loan__grid:last-child {
@@ -165,11 +218,11 @@
 }
 
 .loan__messages {
-  background-color: #06c4ff;
-  -webkit-border-radius: 4px;
-          border-radius: 4px;
+  border: 1px solid #DDD;
+  border-left: 4px solid #DC3235;
+  background-color: #FFF;
+  color: #555D66;
   margin-bottom: 30px;
-  color: #FFF;
   padding: 10px;
 }
 

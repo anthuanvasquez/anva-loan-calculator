@@ -16,14 +16,14 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 // Plugin Constans
-define ( 'ANVA_LOAN_CALCULATOR_PLUGIN_VERSION', '1.0.0' );
-define ( 'ANVA_LOAN_CALCULATOR_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
-define ( 'ANVA_LOAN_CALCULATOR_PLUGIN_URI', plugin_dir_url( __FILE__ ) );
+define ( 'ANVA_LOAN_CALC_PLUGIN_VERSION', '1.0.0' );
+define ( 'ANVA_LOAN_CALC_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
+define ( 'ANVA_LOAN_CALC_PLUGIN_URI', plugin_dir_url( __FILE__ ) );
 
 // Load dependencies
-require_once( ANVA_LOAN_CALCULATOR_PLUGIN_DIR . '/includes/general.php' );
-require_once( ANVA_LOAN_CALCULATOR_PLUGIN_DIR . '/includes/loan.php' );
-require_once( ANVA_LOAN_CALCULATOR_PLUGIN_DIR . '/includes/widget.php' );
+require_once( ANVA_LOAN_CALC_PLUGIN_DIR . '/includes/general.php' );
+require_once( ANVA_LOAN_CALC_PLUGIN_DIR . '/includes/loan.php' );
+require_once( ANVA_LOAN_CALC_PLUGIN_DIR . '/includes/widget.php' );
 
 /**
  * Anva Loan Calculator Init.
