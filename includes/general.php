@@ -16,19 +16,6 @@ function anva_loan_scripts() {
 }
 
 /**
- * Loand calculator textdomain.
- *
- * @since  1.0.0
- */
-function anva_loan_textdomain() {
-	load_plugin_textdomain(
-		'anva-loan',
-		false,
-		dirname( plugin_basename( __FILE__ ) ) . '/languages'
-	);
-}
-
-/**
  * Get all js locals
  */
 function anva_loan_js_locals() {

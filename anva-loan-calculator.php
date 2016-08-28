@@ -6,6 +6,8 @@ Version: 1.0.0
 Author: Anthuan Vásquez
 Author URI: http://anthuanvasquez.net
 License: GPL2
+Text Domain: anva-loan
+Domain Path: /languages/
 */
 
 // If this file is called directly, abort.
@@ -33,8 +35,18 @@ function anva_loan_init() {
 	$loan = Anva_Loan_Calculator::get_instance();
 
 	add_action( 'wp_enqueue_scripts', 'anva_loan_scripts' );
-	add_action( 'plugins_loaded', 'anva_loan_textdomain' );
 	add_action( 'widgets_init', 'anva_loan_widget' );
 	
 }
 add_action( 'after_setup_theme', 'anva_loan_init' );
+
+/**
+ * Loand calculator textdomain.
+ *
+ * @since  1.0.0
+ */
+function anva_loan_textdomain() {
+	$dir = basename( dirname( __FILE__ ) ) . '/languages/';
+	load_plugin_textdomain( 'anva-loan', false, $dir );
+}
+add_action( 'plugins_loaded', 'anva_loan_textdomain' );

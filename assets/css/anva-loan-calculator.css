@@ -1,13 +1,16 @@
 .loan {
-  border: 1px solid #DDD;
-  -webkit-border-radius: 2px;
-          border-radius: 2px;
-  padding: 20px;
   position: relative;
 }
 
 .widget .loan {
   padding: 10px;
+}
+
+.loan__wrap {
+  border: 1px solid #DDD;
+  -webkit-border-radius: 2px;
+          border-radius: 2px;
+  padding: 20px;
 }
 
 .loan__heading {
@@ -19,12 +22,24 @@
   padding: 20px;
 }
 
+.loan__heading--history, .loan__heading--overview {
+  border: 1px solid #DDD;
+  -webkit-border-radius: 2px;
+          border-radius: 2px;
+  margin: 20px 0 20px;
+}
+
 .widget .loan__heading {
   font-size: 18px;
   line-height: 1.2;
   text-align: center;
   margin: -10px -10px 10px;
   padding: 10px;
+}
+
+.loan__table--history {
+  border: 1px solid #DDD;
+  border-top: 0;
 }
 
 .loan__form {

@@ -2,13 +2,16 @@
 @import "mixins";
 
 .loan {
-	border: 1px solid #DDD;
-	border-radius: 2px;
-	padding: $padding;
 	position: relative;
 
 	.widget & {
 		padding: 10px;
+	}
+
+	&__wrap {
+		border: 1px solid #DDD;
+		border-radius: 2px;
+		padding: $padding;
 	}
 
 	&__heading {
@@ -19,12 +22,26 @@
 		margin: (-$padding) (-$padding) $padding;
 		padding: $padding;
 
+		&--history,
+		&--overview {
+			border: 1px solid #DDD;
+			border-radius: 2px;
+			margin: $padding 0 $padding;
+		}
+
 		.widget & {
 			font-size: 18px;
 			line-height: 1.2;
 			text-align: center;
 			margin: (-10px) (-10px) 10px;
 			padding: 10px;
+		}
+	}
+
+	&__table {
+		&--history {
+			border: 1px solid #DDD;
+			border-top: 0;
 		}
 	}
 
