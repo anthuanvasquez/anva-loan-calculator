@@ -146,14 +146,14 @@
     // Loan Calculator
     var loanCalc = {
 
-        loanForm:     document.getElementById('loanForm'),
-        loanSubmit:   document.getElementById('loanSubmit'),
-        loanClear:    document.getElementById('loanClear'),
+        loanForm:   document.getElementById('loanForm'),
+        loanSubmit: document.getElementById('loanSubmit'),
+        loanClear:  document.getElementById('loanClear'),
 
         init: function() {
             
             var loanMonth = document.getElementById('pay'),
-                loanYear =  document.getElementById('pay_years')
+                loanYear  = document.getElementById('pay_years')
             ;
 
             // Button submit
@@ -188,7 +188,8 @@
                 loanamt   = top.document.loanForm.amt.value,
                 paymnt    = top.document.loanForm.pay.value,
                 rate      = top.document.loanForm.rate.value,
-                alert     = document.getElementById('loanMessage')
+                alert     = document.getElementById('loanMessage'),
+                email     = document.getElementById('emailCheck').checked
             ;
 
             if ( firstName === "" ) {
@@ -198,26 +199,36 @@
                 return false;
                 
             } else if ( loanamt === "" || isNaN(parseFloat(loanamt)) || loanamt === 0 ) {
+                
                 alert.innerHTML = "Por favor ingrese un monto valido para el prestamo.";
                 top.document.loanForm.amt.value = "";
                 top.document.loanForm.amt.focus();
+                
                 return false;
             
             } else if ( paymnt === "" || isNaN(parseFloat(paymnt)) || paymnt === 0 ) {
+                
                 alert.innerHTML = "Por favor, introduzca un nÃºmero de pago vÃ¡lido.";
                 top.document.loanForm.pay.value = "";
                 top.document.loanForm.pay.focus();
+                
                 return false;
                 
             } else if ( rate === "" || isNaN(parseFloat(rate)) || rate === 0 ) {
+                
                 alert.innerHTML = "Por favor introduce la tasa de interÃ©s anual.";
                 top.document.loanForm.rate.value = "";
                 top.document.loanForm.rate.focus();
+                
                 return false;
 
-            } else if ( document.getElementById('emailCheck').checked && top.document.loanForm.email.value === "" ) {
+            } else if ( email && top.document.loanForm.email.value === "" ) {
                 ;
+                
                 alert.innerHTML = "No deje el campo de email vacio.";
+                top.document.loanForm.email.focus();
+
+                return false
                 
             } else {
                 loanCalc.show(); 
@@ -391,7 +402,7 @@
                         ddays = ddays + 365;
                     }
 
-                // Mensual
+                // Monthly
                 } else {
                     ddays = ddays + 30;
                 }
