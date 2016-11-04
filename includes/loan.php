@@ -46,31 +46,31 @@ class Anva_Loan_Calculator
 		    <div class="loan__wrap">
 
 		        <h2 class="loan__heading">
-		            <?php _e( 'Entre sus Datos de Prestamo', 'anva-loan' ); ?>
+		            <?php _e( 'Loan Details', 'anva-loan' ); ?>
 		        </h2>
 		        
-		        <form class="loan__form" name="loanForm">
+		        <form id="loanForm" class="loan__form" name="loanForm">
 		            <div id="loanMessage" class="loan__messages"></div>
 		            <div class="loan__form-wrap">
 		                <ul class="loan__list">
 		                	<li class="loan__item">
 		                        <div class="loan__grid">
 		                            <label class="loan__label" for="firstName">
-		                                <?php _e( 'First Name' ) ?>:
+		                                <?php _e( 'First Name', 'anva-loan' ) ?>:
 		                            </label>
 		                        </div>
 		                        <div class="loan__grid">
-		                            <input type="text" id="firstName" name="firstName" placeholder="<?php _e( 'First Name' ); ?>" class="loan__field">
+		                            <input type="text" id="firstName" name="firstName" placeholder="<?php _e( 'First Name', 'anva-loan' ); ?>" class="loan__field">
 		                        </div>
 		                    </li>
 		                    <li class="loan__item">
 		                        <div class="loan__grid">
 		                            <label class="loan__label" for="lastName">
-		                                <?php _e( 'Last Name' ) ?>:
+		                                <?php _e( 'Last Name', 'anva-loan' ) ?>:
 		                            </label>
 		                        </div>
 		                        <div class="loan__grid">
-		                            <input type="text" id="lastName" name="lastName" placeholder="<?php _e( 'Last Name' ); ?>" class="loan__field">
+		                            <input type="text" id="lastName" name="lastName" placeholder="<?php _e( 'Last Name', 'anva-loan' ); ?>" class="loan__field">
 		                        </div>
 		                    </li>
 		                    <li class="loan__item">
@@ -80,7 +80,7 @@ class Anva_Loan_Calculator
 		                            </label>
 		                        </div>
 		                        <div class="loan__grid">
-		                            <input type="text" id="amt" name="amt" placeholder="<?php _e( 'ex. 15000' ); ?>" class="loan__field">
+		                            <input type="text" id="amt" name="amt" placeholder="<?php _e( 'ex. 15000', 'anva-loan' ); ?>" class="loan__field">
 		                        </div>
 		                    </li>  
 		                    <li class="loan__item">
@@ -90,26 +90,30 @@ class Anva_Loan_Calculator
 		                            </label>
 		                        </div>
 		                        <div class="loan__grid">
-		                        	<span><?php _e(' Months', 'anva-loan' ); ?></span>
-		                            <input type="text" id="pay" name="pay" placeholder="<?php _e( 'ex. 12' ); ?>" onchange="changeYearsConversion(this.form)" class="loan__field loan__field--mini">
-		                        	<span><?php _e(' or Years', 'anva-loan' ); ?></span>
-		                            <input type="text" id="pay_years" name="pay_years" placeholder="<?php _e( 'ex. 2' ); ?>" onchange="changeMonthConversion(this.form)" class="loan__field loan__field--mini">
+		                        	<div class="loan__grid">
+		                        		<span><?php _e(' Months', 'anva-loan' ); ?></span>
+		                            	<input type="text" id="pay" name="pay" placeholder="<?php _e( 'ex. 12', 'anva-loan' ); ?>" class="loan__field">
+		                        	</div>
+		                        	<div class="loan__grid">
+		                        		<span><?php _e(' or Years', 'anva-loan' ); ?></span>
+		                            	<input type="text" id="pay_years" name="pay_years" placeholder="<?php _e( 'ex. 2', 'anva-loan' ); ?>" class="loan__field">
+		                            </div>
 		                        </div>
 		                    </li>
 		                    <li class="loan__item">
 		                        <div class="loan__grid">
 		                            <label class="loan__label" for="rate">
-		                                <?php _e( 'Interest Rate (Annual)' ); ?>:
+		                                <?php _e( 'Interest Rate (Annual)', 'anva-loan' ); ?>:
 		                            </label>
 		                        </div>
 		                        <div class="loan__grid">
-		                            <input type="text" id="rate" name="rate" placeholder="<?php _e( '% per year' ); ?>" class="loan__field loan__field--text">
+		                            <input type="text" id="rate" name="rate" placeholder="<?php _e( '% per year', 'anva-loan' ); ?>" class="loan__field loan__field--text">
 		                        </div>
 		                    </li>   
 		                    <li class="loan__item">
 		                        <div class="loan__grid">
 		                            <label class="loan__label" for="pay_type">
-		                                <?php _e( 'Capitalization Options' ) ?>:
+		                                <?php _e( 'Capitalization Options', 'anva-loan' ) ?>:
 		                            </label>
 		                        </div>
 		                        <div class="loan__grid">
@@ -123,33 +127,37 @@ class Anva_Loan_Calculator
 		                    <li class="loan__item">
 		                        <div class="loan__grid loan__grid">
 		                            <label class="loan__label" for="days">
-		                                <?php _e( 'Payment Start Date' ); ?>:
+		                                <?php _e( 'Payment Start Date', 'anva-loan' ); ?>:
 		                            </label>
 		                        </div>
 		                        <div class="loan__grid">
-		                            <select id="days" name="days" class="loan__field loan__field--select loan__field--mini">
-		                                <?php foreach ( range( 1, 31 ) as $day ) : ?>
-		                                    <option value="<?php echo $day; ?>" <?php selected( date('j'), $day );?>>
-		                                        <?php echo $day; ?>
-		                                    </option>
-		                                <?php endforeach; ?>
-		                            </select>
-
-		                            <select id="months" name="months" class="loan__field loan__field--select loan__field--mini">
-		                            	<?php foreach ( $this->get_months() as $key => $month ) : ?>
-		                                    <option value="<?php echo $key; ?>" <?php selected( date('n'), $key ); ?>>
-		                                    	<?php echo $month; ?>
-		                                    </option>
-		                                <?php endforeach; ?>
-		                            </select>
-		                                
-		                            <select id="years" name="years" class="loan__field loan__field--select loan__field--mini">
-		                                <?php foreach ( range( date('Y'), date('Y') + 30 ) as $year ) : ?>
-		                                    <option value="<?php echo $year; ?>" <?php selected( date('Y'), $year ); ?>>
-		                                    	<?php echo $year; ?>		
-		                                    </option>
-		                                <?php endforeach; ?>
-		                            </select>
+		                        	<div class="loan__grid loan__grid--third">
+			                            <select id="days" name="days" class="loan__field loan__field--select">
+			                                <?php foreach ( range( 1, 31 ) as $day ) : ?>
+			                                    <option value="<?php echo $day; ?>" <?php selected( date('j'), $day );?>>
+			                                        <?php echo $day; ?>
+			                                    </option>
+			                                <?php endforeach; ?>
+			                            </select>
+		                            </div>
+		                        	<div class="loan__grid loan__grid--third">
+			                            <select id="months" name="months" class="loan__field loan__field--select">
+			                            	<?php foreach ( $this->get_months() as $key => $month ) : ?>
+			                                    <option value="<?php echo $key; ?>" <?php selected( date('n'), $key ); ?>>
+			                                    	<?php echo $month; ?>
+			                                    </option>
+			                                <?php endforeach; ?>
+			                            </select>
+		                            </div>
+		                        	<div class="loan__grid loan__grid--third">
+			                            <select id="years" name="years" class="loan__field loan__field--select">
+			                                <?php foreach ( range( date('Y'), date('Y') + 30 ) as $year ) : ?>
+			                                    <option value="<?php echo $year; ?>" <?php selected( date('Y'), $year ); ?>>
+			                                    	<?php echo $year; ?>		
+			                                    </option>
+			                                <?php endforeach; ?>
+			                            </select>
+		                            </div>
 		                        </div>
 		                    </li>
 		                    
@@ -157,9 +165,9 @@ class Anva_Loan_Calculator
 			                    <li class="loan__item loan__item--email">
 			                        <div class="loan__grid">
 				                        <div class="loan__checkbox">
-				                        	<input type="checkbox" id="email" name="email" class="loan__field loan__field--checkbox">
-					                        <label class="loan__label" for="email">
-					                            <?php _e( 'Check to Send Report Email' ); ?>:
+				                        	<input type="checkbox" id="emailCheck" name="emailCheck" class="loan__field loan__field--checkbox">
+					                        <label class="loan__label" for="emailCheck">
+					                            <?php _e( 'Check to Send Report Email', 'anva-loan' ); ?>:
 					                        </label>
 				                        </div>
 			                        </div>
@@ -170,11 +178,11 @@ class Anva_Loan_Calculator
 		                    <?php endif; ?>
 
 		                    <li class="loan__item loan__item--actions">
-		                        <button type="button" class="loan__button button" onclick="return check()">
-		                            <i class="fa fa-table"></i> <?php _e( 'Calcular' ); ?>
+		                        <button type="button" id="loanSubmit" class="loan__button button">
+		                            <?php _e( 'Calculate', 'anva-loan' ); ?>
 		                        </button>
-		                        <button type="button" class="loan__button button" onclick="clearScreen()">
-		                            <i class="fa fa-times"></i> <?php _e( 'Resetear' ); ?>
+		                        <button type="button" id="loanClear" class="loan__button button">
+		                            <?php _e( 'Reset', 'anva-loan' ); ?>
 		                        </button>
 		                    </li>
 		                </ul>
@@ -217,7 +225,7 @@ class Anva_Loan_Calculator
 			5  => __( 'May', 'anva-loan' ),
 			6  => __( 'June', 'anva-loan' ),
 			7  => __( 'July', 'anva-loan' ),
-			8  => __( 'Agoust', 'anva-loan' ),
+			8  => __( 'August', 'anva-loan' ),
 			9  => __( 'September', 'anva-loan' ),
 			10 => __( 'October', 'anva-loan' ),
 			11 => __( 'November', 'anva-loan' ),

@@ -9,3 +9,9 @@
     	clear: both;
 	}
 }
+
+@mixin bp($size, $width: 'max-width' ) {
+	@media screen and (max-width: $size) {
+		@content;
+	}
+}
