@@ -210,23 +210,26 @@ class Anva_Loan_Calculator
 	public function get_months()
 	{
 		$months = array(
-			1  => __( 'Enero', 'anva-loan' ),
-			2  => __( 'Febrero', 'anva-loan' ),
-			3  => __( 'Marzo', 'anva-loan' ),
-			4  => __( 'Abril', 'anva-loan' ),
-			5  => __( 'Mayo', 'anva-loan' ),
-			6  => __( 'Junio', 'anva-loan' ),
-			7  => __( 'Julio', 'anva-loan' ),
-			8  => __( 'Agosto', 'anva-loan' ),
-			9  => __( 'Septiembre', 'anva-loan' ),
-			10 => __( 'Octubre', 'anva-loan' ),
-			11 => __( 'Noviembre', 'anva-loan' ),
-			12 => __( 'Diciembre', 'anva-loan' ),
+			1  => __( 'January', 'anva-loan' ),
+			2  => __( 'February', 'anva-loan' ),
+			3  => __( 'March', 'anva-loan' ),
+			4  => __( 'April', 'anva-loan' ),
+			5  => __( 'May', 'anva-loan' ),
+			6  => __( 'June', 'anva-loan' ),
+			7  => __( 'July', 'anva-loan' ),
+			8  => __( 'Agoust', 'anva-loan' ),
+			9  => __( 'September', 'anva-loan' ),
+			10 => __( 'October', 'anva-loan' ),
+			11 => __( 'November', 'anva-loan' ),
+			12 => __( 'December', 'anva-loan' ),
 		);
 
 		return $months;
 	}
 
+	/**
+	 * @todo send email when the report is created.
+	 */
 	public function send_email()
 	{
 		// Send email after generate the report
